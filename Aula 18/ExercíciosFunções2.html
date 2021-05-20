@@ -79,14 +79,15 @@
         console.log(sortear(x))
 
         // 8)
-        function checarAnoBissexto(ano){
+        let checarAnoBissexto = ano => {
             if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)){
                 return true
             }
             return false
         }
+        
         ano = Number(prompt("Digite u ano para verifica se ele é bisexto:"))
-
+        
         if (checarAnoBissexto(ano)){
             console.log(`O ano ${ano} é bissexto`)
         }
