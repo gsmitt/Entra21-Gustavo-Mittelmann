@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1)
+        let pegarPrimeiroEUltimo = vetor => vetorResposta = [vetor[0], vetor[vetor.length-1]]
+        console.log(pegarPrimeiroEUltimo([1,2,3,4,5]))
+
+        // 2)
+        let mostrarSimbolo = x =>{
+            let str = ""
+            for (let i = 0; i < x; i++){
+                str += "#"
+            }
+            return str
+        }
+        let x = prompt("Digite um número")
+        console.log(mostrarSimbolo(x))
+
+        // 3)
+        let repetirElementos = (x,y) =>{
+            resultado = []
+            for (let i = 0; i < y; i++){
+                resultado[i] = x
+            }
+            return resultado
+        }
+        let x = prompt("Digite algo para repetir"),
+        y = prompt("Digite o número de vezes a repetir")
+        console.log(repetirElementos(x,y))
+
+        // 4)
+        let pegarIdade = (ano, anoAtual) => anoAtual - ano
+        
+        let ano = prompt("Digite o ano em que você nasceu:"),
+        anoAtual = prompt("Digite o ano atual:")
+        console.log(pegarIdade(ano, anoAtual))
+
+        // 5)
+        let vetor = []
+        for (let i = 0; i < 5; i++){
+            vetor[i] = Number(prompt(`Digite o ${i+1} item do vetor:`))
+        }
+        let trocarUnsElemntosDoVetorAiSeiLa = vetor => {
+            vetor[1] = 10
+            vetor[2] = 30
+            return vetor
+        }
+        vetor2 = trocarUnsElemntosDoVetorAiSeiLa(vetor)
+        console.log (vetor, vetor2)
+
+        // 6)
+        let pegarParComIndicePar = vetorEntrada => {
+            let vetorSaida = []
+            for (let i = 0; i < vetorEntrada.length; i++){
+                if (vetorEntrada[i] % 2 == 0 && i % 2 == 0){
+                    vetorSaida.push(vetorEntrada[i])
+                }
+            }
+            return vetorSaida
+        }
+        console.log(pegarParComIndicePar([2,1,2,1,2,1,2,2]))
+
+        // 7)
+        let sortear = entrada => {
+            let aleatorio = (Math.floor(Math.random() * 10) + 1)
+            if (entrada == aleatorio){
+                return `Parabéns! O número sorteado foi o ${aleatorio}`
+            }
+            return `Que pena! O número sorteado foi o ${aleatorio}`
+        }
+        x = Number(prompt("Digite um número:"))
+        console.log(sortear(x))
+
+        // 8)
+        function checarAnoBissexto(ano){
+            if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)){
+                return true
+            }
+            return false
+        }
+        ano = Number(prompt("Digite u ano para verifica se ele é bisexto:"))
+
+        if (checarAnoBissexto(ano)){
+            console.log(`O ano ${ano} é bissexto`)
+        }
+        else {
+            console.log(`O ano ${ano} não é bissexto`)
+        }
+
+
+    </script>
+</body>
+</html>
