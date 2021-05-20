@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1)
+        let matriz = [], contador = 0
+        for (let i = 0; i < 3; i++){
+            matriz[i] = []
+            for (let j = 0; j < 3; j++){
+                matriz[i][j] = Number(prompt(`Digite um número para inserir na ${i+1} linha e ${j+1} coluna:`))
+                
+                if (matriz[i][j] > 10){
+                    contador++
+                }
+            }
+        }
+        console.log(matriz)
+        console.log(contador)
+
+        // 2)
+
+        let matriz = []
+        for (let i = 0; i < 5; i++){
+            matriz[i] = []
+            for (let j = 0; j < 5; j++){
+                if (j == i){
+                    matriz[i][j] = 1
+                }
+                else {
+                    matriz[i][j] = 0
+                }
+            }
+        }
+        console.log(matriz)
+
+        // 3)
+        let matriz = [], valorX, encontrado = false
+        for (let i = 0; i < 3; i++){
+            matriz[i] = []
+            for (let j = 0; j < 3; j++){
+                matriz[i][j] = Number(prompt(`Digite um número para inserir na ${i+1} linha e ${j+1} coluna:`))
+            }
+        }
+        valorX = Number(prompt("Digite o número a ser encontrado:"))
+        for (let i = 0; i < 3; i++){
+            for (let j = 0; j < 3; j++){
+                if (matriz[i][j] == valorX){
+                    console.log(`O valor procurado foi encontrado na linha ${i + 1}, coluna ${j + 1}`)
+                    encontrado = true
+                }
+            }
+        }
+        if (encontrado == false){
+            console.log("não encontrado")
+        }
+
+        // 4)
+        let matriz1 = [], matriz2 = [], matriz3 = []
+        for (let i = 0; i < 3; i++){
+            matriz1[i] = []
+            for (let j = 0; j < 3; j++){
+                matriz1[i][j] = Number(prompt(`Digite um número para inserir na ${i+1} linha e ${j+1} coluna:`))
+            }
+        }
+        for (let i = 0; i < 3; i++){
+            matriz2[i] = []
+            for (let j = 0; j < 3; j++){
+                matriz2[i][j] = Number(prompt(`Digite um número para inserir na ${i+1} linha e ${j+1} coluna:`))
+            }
+        }
+        for (let i = 0; i < 3; i++){
+            matriz3[i] = []
+            for (let j = 0; j < 3; j++){
+                if (matriz1[i][j] > matriz2[i][j]){
+                    matriz3[i][j] = matriz1[i][j]
+                }
+                else{
+                    matriz3[i][j] = matriz2[i][j]
+                }
+            }
+        }
+        console.log(matriz3)
+
+        // 5)
+        let matriz = [], soma = 0
+        for (let i = 0; i < 3; i++){
+            matriz[i] = []
+            for (let j = 0; j < 3; j++){
+                matriz[i][j] = Number(prompt(`Digite um número para inserir na ${i+1} linha e ${j+1} coluna:`))
+            }
+        }
+        for (let i = 0; i < 3; i++){
+            for (let j = 0; j < 3; j++){
+                if(i < j){
+                    soma += matriz[i][j]
+                }
+            }
+        }
+        console.log(soma)
+
+        // 6)
+        matriz = []
+        for (let i = 0; i < 3; i++){
+            matriz[i] = []
+            matriz[i][0] = prompt(`Digite o nome do ${i+1} aluno:`)
+            for (let j = 1; j < 4; j++){
+                matriz[i][j] = Number(prompt(`Digite a ${j} nota do ${i+1} aluno:`))
+            }
+        }
+        for (let i = 0; i < 3; i++){
+            matriz[i][4] = (matriz[i][1] + matriz[i][2] + matriz[i][3]) / 3
+        }
+        for (let i = 0; i < 3; i++){
+            if (matriz[i][4] < 6){
+                console.log(matriz[i], "Reprovado")
+            }
+            else{
+                console.log(matriz[i], "Aprovado")
+            }
+        }
+    </script>
+</body>
+</html>

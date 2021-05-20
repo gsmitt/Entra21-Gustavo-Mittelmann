@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 1)
+        let vetor = [1,2,3,4,5,6,7,8,9,10]
+        let contador = 0
+        for (let i = 0; i < vetor.length; i++) {
+            if(vetor[i] % 2 == 0){
+                contador++
+            }
+        }
+        console.log(contador)
+
+        // 2)
+        let vetor = [],
+        maior = null,
+        posicao = null
+        
+        for(let i = 0; i < 5; i++){
+            vetor[i] = prompt(`Digite o ${i + 1} número: `)
+        }
+        for (let i = 0; i <= vetor.length; i++) {
+            if (maior == null){
+                maior = vetor[i]
+                posicao = i
+                }
+            else if(vetor[i] > maior){
+                maior = vetor[i]
+                posicao = i
+            }
+        }
+        console.log(vetor)
+        console.log(`O maior número é ${maior} e está na posição ${posicao}`)
+
+        // 3)
+        let vetor = []
+        for(let i = 0;i < 5; i++){
+            vetor[i] = Number(prompt("Digite um número: "))
+        }
+        console.log(vetor)
+        
+        console.log(`O maior elemento é ${Math.max.apply(Math,vetor)} e o menor é ${Math.min.apply(Math,vetor)}`)
+
+        // 4)
+        let vetor1 = [1,2,3,4,5]
+        let vetor2 = vetor1.slice().reverse()
+    
+        console.log(`${vetor1}\n${vetor2}`)
+
+        // 5)
+        let listaNomes, nome, mensagem
+        listaNomes = ["luiz", "arthur", "henrique", "martin", "eduardo"]
+        nome = prompt("Digite um nome: ").toLowerCase()
+        mensagem = "NÃO ACHEI"
+        for(let i = 0; i < listaNomes.length; i++){
+            if(listaNomes[i] == nome){
+                mensagem = "ACHEI"
+                break
+            }
+        }
+        console.log(mensagem)
+
+        // 6)
+        let A = [1,0,5,-2,-5,7]
+        let varSoma = A[0] + A[1] + A[5]
+        console.log(`A soma é ${varSoma}`)
+        A[4] = 100
+        for(let i = 0; i < A.length; i++){
+            console.log(A[i])
+        }
+
+        // 7)
+        let vetor1 = [1,2,3,4,5]
+        let vetor2 = []
+        for(let i = 0; i < vetor1.length; i++){
+            vetor2[i] = vetor1[i] ** 2
+        }
+        console.log(`${vetor1},\n${vetor2}`)
+
+        // 8)
+        let vetor = []
+        for(let i = 0; i < 5; i++){
+            vetor[i] = prompt("Digite um número: ")
+                if(vetor[i] % 2 != 0){
+                    console.log("O número deve ser par!")
+                    i--
+                }
+        }
+        console.log(vetor.slice().reverse())
+
+        // 9)
+
+        let vetor = []
+        let verificar, x, y
+        for(let i = 0; i < 8; i++){
+            vetor[i] = prompt("Digite um número: ")
+        }
+        do {
+            x = prompt("Dgite um valor x: ")
+            if (vetor[x] >= 0 && vetor[x] <= 7){
+                verificar = false
+            }
+            else{
+                verificar = true
+                alert("O numero Inserido não é válido")
+            }
+        } while (verificar == true)
+        do {
+            y = prompt("Dgite um valor y: ")
+            if (vetor[y] >= 0 && vetor[y] <= 7){
+                verificar = false
+            }
+            else{
+                verificar = true
+                alert("O numero Inserido não é válido")
+            }
+        } while (verificar == true)
+        console.log(Number(vetor[x])+Number(vetor[y]))
+
+        // 10)
+        let vetor = [], soma = 0, negativos = 0
+        for (let i = 0; i < 10; i++){
+            vetor[i] = Number(prompt("Digite um número para inserir no vetor: "))
+        }
+        for (let j = 0; j < vetor.length; j++){
+            if (vetor[j] == 0){
+                continue
+            }
+            else if (vetor[j] > 0){
+                soma += vetor[j]
+            }
+            else if(vetor[j] < 0) {
+                negativos++
+
+            }
+        }
+        console.log(vetor)
+        console.log(`A soma dos números positivos é ${soma} e existem ${negativos} negativos nesse array.`)
+
+        // 11)
+        let vetor = [], maior, menor
+        for (let i = 0; i < 5; i++){
+            vetor[i] = Number(prompt("Digite um número para inserir no vetor: "))
+            menor = vetor[i]
+            maior = vetor[i]
+        }
+        for (let i = 0; i < vetor.length; i++){
+            if(vetor[i] > maior){
+                maior = vetor[i]
+            }
+        if(vetor[i] < menor){
+            menor = vetor[i]
+        }
+        }
+        console.log(`O menor número é ${menor}, e o maior é ${maior}`)
+
+        // 12)
+        let vetor = [], 
+        count1 = 0, 
+        count2 = 0, 
+        count3 = 0, 
+        count4 = 0, 
+        count5 = 0, 
+        count6 = 0
+        for(let i = 0; i < 100; i++){
+            vetor[i] = Math.floor((Math.random() * 6) + 1)
+        }
+        for(let i = 0; i < vetor.length; i++){
+            switch(vetor[i]){
+                case 1:
+                    count1 += 1;
+                    break;
+                case 2:
+                    count2++;
+                    break;
+                case 3:
+                    count3++;
+                    break;
+                case 4:
+                    count4++;
+                    break;
+                case 5:
+                    count5++;
+                    break;
+                case 6:
+                    count6++;
+                    break;
+
+            }
+        }
+        console.log(`${count1} com o número 1 \n${count2} com o número 2 \n${count3} com o número 3 \n${count4} com o número 4 \n${count5} com o número 5 \n${count6} com o número 6`)
+
+        // 13)
+        let notas = [], media = 0, maior = 0, i = -1, atual
+        while(true){
+             i++
+            atual = Number(prompt("Digite uma nota: ")) 
+            if(atual >= 0){
+                notas[i] = atual
+            }
+            else{
+                break
+            }
+        }
+        for(let i = 0; i < notas.length; i++){
+            media += notas[i]
+        }
+        
+        media /= notas.length
+        maior = Math.max.apply(Math,notas)
+
+        console.log(`A maior nota é ${maior} e a média é ${media}`)
+
+        // 14)
+        let vetor1 = [], vetor2 = [], mensagem = "SÃO IGUAIS"
+        
+        for (let i = 0; i < 5; i++){
+            vetor1[i] = Number(prompt(`Digite o ${i + 1} número para inserir no vetor: `))
+        }
+        
+        for (let i = 0; i < 5; i++){
+            vetor2[i] = Number(prompt(`Digite o ${i + 1} número para inserir no vetor: `))
+        }
+        for (let i = 0; i < 5; i++){
+            if (vetor1[i] != vetor2[i]){
+                mensagem = "NÃO SÃO IGUAIS"
+                break
+            }
+        }
+        console.log(mensagem)
+
+        // 15)
+        let vetor1 = [], vetor2 = [], intersec = []
+        for (let i = 0; i < 5; i++){
+            vetor1[i] = prompt("Digite um Valor para inserir no primeiro vetor: ")
+        }
+        for (let i = 0; i < 5; i++){
+            vetor2[i] = prompt("Digite um Valor para inserir no segundo vetor: ")
+        }
+        for (let i = 0; i < vetor1.length; i++){
+            for (let j = 0; j < vetor2.length; j++){
+                if (vetor1[i] == vetor2[j]){
+                    intersec.push(vetor1[i])
+                }
+            }
+        }
+        console.log(intersec)
+
+
+        // 16)
+        let vetor = [],
+        inicial = Number(prompt("Digite o primeiro número")), 
+        final = Number(prompt("Digite o segundo número"))
+        for (let i = inicial; i <= final; i += 2){
+            console.log(i)
+        }
+
+        // 17)
+        let trocou = false,
+        listaNumeros = []
+        for (let i = 0; i < 10; i++){
+            listaNumeros[i] = (Math.floor(Math.random()*10)+1)
+        }
+        console.log(listaNumeros)
+        do {
+            for(let i = 0; i < 10; i++){
+                if (listaNumeros[i] > listaNumeros[i + 1]){
+                    let placeholder = listaNumeros[i]
+                    listaNumeros[i] = listaNumeros[i + 1]
+                    listaNumeros[i + 1] = placeholder
+                    //console.log(listaNumeros)
+                    trocou = true
+                }
+            }
+        } while (trocou = true)
+        console.log(listaNumeros)
+
+
+        // 18)
+        let listaNumeros = [],
+        soma = 0,
+        mult = 0
+        for (let i = 0; i < 10; i++){
+            listaNumeros[i] = (Math.floor(Math.random()*10)+1)
+        }
+        for (let i = 0; i < 10; i++){
+            if (listaNumeros[i] % 2 != 0){
+                if (!mult){
+                    mult = listaNumeros[i]
+                }
+                else {
+                    mult *= listaNumeros[i]
+                }
+            }
+            else {
+                soma += listaNumeros[i]
+            }
+        }
+        console.log(listaNumeros, soma, mult)
+
+        // 19)
+        let texto = "Sem trocar que o espinho é seco.\n Sem trocar que seco é ser sol.\n Sem trocar que algum espinho seco secará.",
+        novoTexto = ""
+        for (let i = 0; i < texto.length; i++){
+            if (texto[i] == "t" && texto[i + 1] == "r" && texto[i + 2] == "o"){
+                novoTexto += "sacar" 
+                i += 5
+            }
+            else {
+                novoTexto += texto[i]
+            }
+        }
+        console.log(novoTexto)
+
+        // 20)
+        let listaNotas = [], media = 0, acimaMedia = []
+        for (let i = 0; i < 10; i++){
+            listaNotas[i] = Number(prompt(`Digite a ${i+1} nota: `))
+        }
+        for(let i = 0; i < listaNotas.length; i++){
+            media += listaNotas[i]
+        }
+        media /= listaNotas.length
+        for (let i = 0; i < listaNotas.length; i++){
+            if (listaNotas[i] > media){
+                acimaMedia.push(listaNotas[i])
+            }
+        }
+        console.log(`A média é ${media} e estão acima da média ${acimaMedia}`)
+
+        // 21)
+        let precos = [], nomes = [], quantidade = 0, nomesEntre = [], media = 0, maisQue100 = 0
+        for (let i = 0; i < 5; i++){
+            nomes[i] = prompt(`Digite o nome do ${i+1} produto:`)
+            precos[i] = Number(prompt(`Digite o preço do ${i+1} produto:`))
+        }
+        for (let i = 0; i < 5; i++){
+            if (precos[i] < 50){
+                quantidade++
+            }
+            else if (precos[i] < 100){
+                nomesEntre.push(nomes[i])
+            }
+            else {
+                media += precos[i]
+                maisQue100++
+            }
+        }
+        media /= maisQue100
+        console.log(quantidade, nomesEntre, media)
+
+    </script>
+
+</body>
+</html>
