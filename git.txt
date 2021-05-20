@@ -1,0 +1,20 @@
+git init // inicia uma linha do tempo
+
+git git config --global user.name "[nome]"
+git config --global user.email "[endereco-de-email]"
+
+git add [arquivo(s)]
+
+git status
+
+git branch // inicia linhas o tempo secundaria
+
+git checkout [nome da branch] // mover para a branch
+
+git log // Lista o histórico de versões para o branch atual
+
+git show [commit] // Retorna mudanças de metadata e conteúdo para o commit especificado
+
+git reset --hard [commit] // Descarta todo histórico e mudanças para o commit especificado
+
+git checkout -b [nova branch] // cria e entra numa branch
