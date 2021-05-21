@@ -1,13 +1,15 @@
 git init // inicia uma linha do tempo
 
-git git config --global user.name "[nome]"
+git clone url // clona um repositório
+
+git config --global user.name "[nome]"
 git config --global user.email "[endereco-de-email]"
 
 git add [arquivo(s)]
 
 git status
 
-git branch // inicia linhas o tempo secundaria
+git branch // inicia linha do tempo secundaria
 
 git checkout [nome da branch] // mover para a branch
 
@@ -18,3 +20,11 @@ git show [commit] // Retorna mudanças de metadata e conteúdo para o commit esp
 git reset --hard [commit] // Descarta todo histórico e mudanças para o commit especificado
 
 git checkout -b [nova branch] // cria e entra numa branch
+
+git branch -D [nome da branch] // deletar a branch
+
+git merge [outra branch] // para unir a branch atual com outra
+
+git branch -m [novo nome] // renomear a branch
+
+git push --set-upstream origin [nome da branch] // enviar um push de uma branch nova
