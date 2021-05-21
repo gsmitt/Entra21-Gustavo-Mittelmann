@@ -28,3 +28,7 @@ git merge [outra branch] // para unir a branch atual com outra
 git branch -m [novo nome] // renomear a branch
 
 git push --set-upstream origin [nome da branch] // enviar um push de uma branch nova
+
+git remote add upstream url // adicionar nova origem
+
+git remote rm upstream // remover nova origem
