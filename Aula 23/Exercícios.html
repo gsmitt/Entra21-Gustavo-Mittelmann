@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*
+        // 1)
+        vetor = [1]
+        function embaralhar(vetor){
+            for(let i = vetor.length; i > 0; i--){
+                x = Math.floor(Math.random() * (i) + 1)
+                let temp = vetor[i]
+                vetor[i] = vetor[x]
+                if(temp == undefined){
+                    console.log(i)
+                }
+                vetor[x] = temp
+            }
+        }
+        embaralhar(vetor)
+        console.log(vetor)
+*/ 
+        // 1)
+        function captalize(string){
+            let str = string.split(" "), strfinal = ""
+            for (let i = 0; i < str.length; i++){
+                str[i] = str[i][0].toUpperCase() + str[i].slice(1)
+            }
+            for (let i = 0; i < str.length; i++){
+                if(i == 0){
+                    strfinal += str[i]
+                }
+                else{
+                    strfinal += " " + str[i]
+                }
+            }
+            return strfinal
+        }
+
+        // 2)
+        let checaSpam = string => string.toLowerCase().includes("jequiti", "day trading")
+        
+
+        // 3)
+        function truncar(string, tamanhoMaximo){
+            if (string.length > tamanhoMaximo){
+                string = string.slice(0,tamanhoMaximo) + "..."
+            }
+            return string
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>
