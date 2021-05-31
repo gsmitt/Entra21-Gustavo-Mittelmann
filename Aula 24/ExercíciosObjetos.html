@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.1)
+
+        let estaVazio = objeto => !(Boolean(Object.keys(objeto).length))
+
+        let objeto1 = {}
+        
+        console.log(estaVazio(objeto1))
+
+        // 1.2)
+        function somarNumericos(objeto){
+            acumulador = 0
+            for(let i in objeto){
+                if(isFinite(objeto[i])){
+                    acumulador += +objeto[i]
+                }
+            }
+            return acumulador
+        }
+
+        let objeto = {
+            p1: 20,
+            p2: "50",
+            p3: 85,
+            p4: "Olá",
+            p5: "Teste",
+            p6: "string",
+            p7: 10 
+        }
+        console.log(somarNumericos(objeto))
+
+        // 2.1)
+        let contador = {
+            contador: 0,
+            incrementa(){this.contador += 1},
+            decrementa(){this.contador -= 1},
+            incrementaEm(quantidade){this.contador += quantidade},
+            decrementaEm(quantidade){this.contador -= quantidade},
+            mostraContador(){console.log(this.contador)}
+        }
+
+        // 2.2)
+        let calculadora = {
+            val1: 0,
+            val2: 0,
+            lerValores(){
+                this.val1 = +prompt("Digite o pimeiro número: ")
+                this.val2 = +prompt("Digite o segundo número: ")
+            },
+            soma() {return this.val1 + this.val2},
+            multiplicacao() {return this.val1 * this.val2}
+        }
+
+
+    </script>
+</body>
+</html>

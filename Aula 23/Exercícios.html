@@ -12,13 +12,11 @@
         // 1)
         vetor = [1]
         function embaralhar(vetor){
-            for(let i = vetor.length; i > 0; i--){
-                x = Math.floor(Math.random() * (i) + 1)
+            for(let i = vetor.length - 1; i > 0; i--){
+                let x = Math.floor(Math.random() * (i + 1))
+                
                 let temp = vetor[i]
                 vetor[i] = vetor[x]
-                if(temp == undefined){
-                    console.log(i)
-                }
                 vetor[x] = temp
             }
         }
