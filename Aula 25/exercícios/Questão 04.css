@@ -1,0 +1,13 @@
+.p1{
+    color: forestgreen;
+}
+.p2{
+    font-size: x-large;
+    color: red;
+}
+.p3{
+    font-size: x-large;
+    color: blue;
+    position: relative;
+    top: -24px;
+}

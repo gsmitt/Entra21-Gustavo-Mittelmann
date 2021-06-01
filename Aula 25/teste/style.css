@@ -1,0 +1,66 @@
+#lorem{
+    color: cyan;
+    font-family: "Rock Salt", "Comic Sans MS", "Comic Sans", cursive;
+    text-align: center;
+    letter-spacing: -3px;
+    line-height: 20px;
+}
+
+h1{
+    color: lawngreen;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    text-shadow: 2px 2px 5px black;
+}
+
+h2{
+    color: aqua;
+    font-family: "Rock Salt", "Comic Sans MS", "Comic Sans", cursive;
+}
+
+#dog{
+    position: relative;
+    height: 350px;
+    width: 1850px;
+    
+}
+
+#sans{
+    position: relative;
+    float: right;
+    height: 450px;
+    width: 900px;
+    border-radius: 50%;
+}
+
+h3{
+    color: gold;
+    font-family: "Rock Salt", "Comic Sans MS", "Comic Sans", cursive;
+}
+
+h4{
+    color: darkviolet;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+h5{
+    color: ghostwhite;
+    font-family: "Rock Salt", "Comic Sans MS", "Comic Sans", cursive;
+}
+
+h6{
+    color: #FFAAFF;
+    font-family: "Rock Salt", "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 80%;
+}
+
+.teste{
+    font-size: x-large;
+}
+
+body{
+    background-image:  url("https://static.wikia.nocookie.net/i-dont-feel-so-good-simulator/images/1/14/Dabs.gif/revision/latest?cb=20200415134243");
+    background-repeat: no-repeat;
+    background-position-x: 20%;
+    background-position-y: top;
+    background-size: 35%;
+}
