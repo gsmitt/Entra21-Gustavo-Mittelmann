@@ -1,0 +1,29 @@
+hr{
+    height: 3px;
+}
+.linha1{
+    background-color: black;
+    margin-top: 12px;
+}
+body{
+    background-color: darkgray;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 290px;
+}
+p{
+    text-align: center;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 35px;
+}
