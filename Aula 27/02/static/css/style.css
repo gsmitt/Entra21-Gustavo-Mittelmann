@@ -3,7 +3,7 @@ body{
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
 }
 header{
-    font-size: 1.2vw;
+    font-size: 18px;
     font-weight: 800;
 }
 
@@ -27,6 +27,10 @@ a{
     color: inherit;
 }
 
+li{
+    list-style-type: none;
+}
+
 
 .menu2{
     display: none;
@@ -48,8 +52,8 @@ a{
 .menu1 li:hover{
     background-color: blueviolet;
 }
-.menu2 li:hover{
-    background-color: blueviolet;
+.menu2 li{
+    padding: 0 10px;
 }
 
 .dropdown1:hover .menu2{

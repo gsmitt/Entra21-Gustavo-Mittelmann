@@ -1,0 +1,52 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12pt;
+}
+header{
+    text-align: center;
+    padding: 4.1em 1.5em;
+    background-image: url("../img/overlay.png"), url("../img/bg.jpg");
+    background-size: auto 100%;
+    background-position: center;
+    color: #FFFFFF80;
+    font-weight: normal;
+}
+header img{
+    max-width: 100px;
+    border-radius: 100%;
+}
+h1{
+    display: block;
+    font-weight: 400;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    width: 100%;
+    line-height: 2.4rem;
+    padding-top: 1.2em;
+}
+h1 strong{
+    color: white;
+    font-weight: inherit;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    border-bottom: dotted;
+    border-width: 1px;
+}
+a:hover{
+    animation: link .3s;
+    animation-fill-mode: forwards;
+}
+@keyframes link{
+    from{
+        color:inherit;
+        border-color: inherit;
+        
+    }
+    to{
+        
+        color: #49bf9d;
+        border-color: rgba(0, 0, 0, 0);
+    }
+}
