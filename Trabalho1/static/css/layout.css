@@ -1,34 +1,131 @@
-body{
- width: 100%;
- margin: 0%;
- background-color: #0C0805;
+html{
+    font-size: 14px;
+    font-family: 'Baloo Tammudu 2', cursive;
 }
-.content{
-    position: absolute;
-    width: 100vw;
-    
+header{
+    position: relative;
+    color: white;
+    font-size: 1rem;
+    margin-top: 15vh;
 }
-
-.background{
-    position: absolute;
-    background-image: url(../img/montanha2.png);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    z-index: -1;
-}
-
-.fundo{
+/*----------------------------------NavBar-----------------------------------------------*/
+nav{
     position: sticky;
     top: 0;
-    background-image: url(../img/fundo.png);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
+    color: white;
+    font-size: 1rem;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    padding-top: 6px;
+    padding-bottom: 4px;
+}
+li{
+    list-style-type: none;
+    text-align: center;
+}
 
-    height: 100vw;
+
+nav a{
+    color: inherit;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    width: 6.5rem;
+}
+
+.fa-paper-plane{
+    font-size: 1.2rem;
+    padding: 0px 12px;
+    margin: auto 0; 
+}
+
+.fa-chevron-down{
+    font-size: .7rem;
+}
+.dd_content{
+    display: none;
+    position: absolute;
+    width: inherit;
+    z-index: 3;
+}
+.dd_content li{
     width: 100%;
-    z-index: -2;
+}
+.dropdown:hover .dd_content{
+    display: block;
+}
+.dropdown i{
+    animation: desroda forwards .2s;
+}
+.dropdown:hover i{
+    animation: roda forwards .2s;
+}
+@keyframes roda{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(-180deg);
+    }
+}
+@keyframes desroda{
+    from{
+        transform: rotateZ(-180deg);
+    }
+    to{
+        transform: rotateZ(0deg);
+    }
+}
+/*----------------------------------Main content-----------------------------------------------*/
+main{
+    position: relative;
+    color: white;
+    font-size: 1rem;
+    width: 100vw;
+}
+
+/*----------------------------------Media Quaries-----------------------------------------------*/
+
+@media screen and (min-width: 600px){
+    html{
+        font-size: 15px;
+    }
+    nav{
+        width: 80vw;
+        border-top-right-radius: .35em;
+        border-top-left-radius: .35em;
+    }
+    main{
+        font-size: 1rem;
+        width: 80vw;
+    }
+    
+
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 1024px){
+
+}
+
+@media screen and (min-width: 1440px){
+
+}
+
+@media screen and (min-width: 1440px){
+
+}
+
+@media screen and (min-width: 2000px){
+
 }
