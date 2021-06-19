@@ -2,73 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/cb2d9711b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/normalize.css">
     <link rel="stylesheet" href="static/css/layout.css">
-    <title>Título bacana</title>
-    <link rel="icon" href="/static/img/paper-plane-solid.svg">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Meu Guia || Principal</title>
 </head>
 <body>
-
-    <div class="background"></div>
-    <div class="fundo"></div>
-
-    <div class="content">
-        <header>
-            <div>
-                <i class="fas fa-paper-plane"></i>
-                <h1>Meu Plano De Viagens</h1>
-            </div>
+    <div class="wraper">
+        <div class="p_grupo header">
+            <div class="p_layer fundo1"></div>
+            <div class="p_layer estrelas1"></div>
+            <div class="p_layer estrelas2"></div>
+            <div class="p_layer estrelas3"></div>
+            <div class="p_layer montanha1"></div>
+            <div class="p_layer montanha2"></div>
+        </div>
+        <div class="p_grupo main">
+            <div class="morraparalax"></div>
+            <header>
+                <h1>Meu Guia de Viagem</h1>
+            </header>
             <nav>
-                <ul>
-                    <li>Principal</li>
-                    <li>
-                        Cidades <i class="fas fa-chevron-down"></i>
-                        <ul>
-                            <li>Atenas</li>
-                            <li>Roma</li>
-                            <li>Berlim</li>
-                            <li>Tóquio</li>
-                            <li>Toulouse</li>
+                <i class="fas fa-paper-plane"></i>
+                <ul class="navbar">
+                    <li><a href="index.html">Principal</a></li>
+                    <li class="dropdown">
+                       <a href="#">Cidades <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dd_content">
+                            <li><a href="c_atenas.html">Atenas</a></li>
+                            <li><a href="c_roma.html">Roma</a></li>
+                            <li><a href="c_berlim.html">Berlim</a></li>
+                            <li><a href="c_toquio.html">Tóquio</a></li>
+                            <li><a href="c_toulouse.html">Toulouse</a></li>
                         </ul>
                     </li>
-                    <li>Itens Necessários</li>
+                    <li><a href="itens.html">Itens</a></li>
                 </ul>
             </nav>
-        </header>
-        <main>
-            <section>
-                <h2>As Cidades</h2>
-                <article>
-                    <div>
-
-                    </div>
-                </article>
-                <article>
-                    <div>
-
-                    </div>
-                </article>
-                <article>
-                    <div>
-
-                    </div>
-                </article>
-                <article>
-                    <div>
-
-                    </div>
-                </article>
-                <article>
-                    <div>
-
-                    </div>
-                </article>
-            </section>
-            <section>
-                <h2>Itens</h2>
-            </section>
-        </main>
+            <main>
+                <section class="sec1">
+                    <h2>As Cidades</h2>
+                    <article>
+                        <div>
+                            <a href="c_atenas.html"><img src="static/img/antenasicon.png" alt="Atenas"></a>
+                            <h3>Atenas</h3>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <a href="c_roma.html"><img src="static/img/romaicon.png" alt="Roma"></a>
+                            <h3>Roma</h3>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <a href="c_berlim.html"><img src="static/img/berlim.jpg" alt="Berlim"></a>
+                            <h3>Berlim</h3>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <a href="c_toquio.html"><img src="static/img/toquioicon.png" alt="Tóquio"></a>
+                            <h3>Tóquio</h3>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <a href="c_toulouse.html"> <img src="static/img/toulouseicon.png" alt="Toulouse"></a>
+                            <h3>Toulouse</h3>
+                        </div>
+                    </article>
+                </section>
+            </main>
+        </div>
+        <footer><p>Imagens: <a href="https://unsplash.com"> Unsplash</a></p></footer>
     </div>
 </body>
 </html>

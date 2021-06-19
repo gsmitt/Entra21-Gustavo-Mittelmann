@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0%;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.wraper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 300px;
+}
+
+.p_grupo{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.main{
+    width: auto;
+    height: fit-content;
+    background-color: #090502;
+    margin-top: 8vw;
+    padding-top: 8vw;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: -5vw;
+}
+
+.p_layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+/*----------------------------------Paralax no topo da pagina-----------------------------------------------*/
+.fundo1{
+    background: url("../img/low/index/fundo_low.png") no-repeat center;
+    background-size: cover;
+    transform: translateZ(-800px) scale(4);
+    z-index: 1;
+}
+
+.estrelas1{
+    background: url("../img/low/index/estrelas1_low.png") no-repeat center;
+    background-size: cover;
+    transform: translateZ(-750px) scale(3.6);
+    z-index: 2;
+}
+
+.estrelas2{
+    background: url("../img/low/index/estrelas2_low.png") no-repeat center;
+    background-size: cover;
+    transform: translateZ(-700px) scale(3.4);
+    z-index: 3;
+}
+.estrelas3{
+    background: url("../img/low/index/estrelas3_low.png") no-repeat center;
+    background-size: cover;
+    transform: translateZ(-650px) scale(3.2);
+    z-index: 4;
+}
+
+.montanha1{
+    background: url("../img/low/index/montanha_low.png") no-repeat center;
+    background-size: cover;
+    transform: translateZ(-300px) scale(2);
+    z-index: 5;
+}
+.montanha2{
+    background: url("../img/low/index/montanhap2_low.png") no-repeat center;
+    background-size: cover;
+    transform: translateZ(-60px) scale(1.4);
+    z-index: 6;
+}
+
+/*----------------------------------Conteúdo da página-----------------------------------------------*/
+
+header{
+    color: #D9D9D9;
+
+}
+nav{
+    background-color: #353535;
+    color: #D9D9D9;
+    box-shadow: #222222;
+}
+
+.dd_content li{
+    background-color: #353535;
+}
+.dd_content li:hover{
+    background-color: #3C6E71;
+}
+main{
+    background-color: #353535;
+    color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sec1{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.sec1 article{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: calc(25vw + 25vh);
+    height: calc(25vw + 25vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5C5C5C;
+    border-radius: 10%;
+    overflow: hidden
+}
+.sec1 h3{
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: calc(50% - .75rem);
+}
+.sec1 div{
+    height: 60%;
+    width: 60%;
+    transform: scale(1.67);
+    background-color: black;
+    overflow: hidden;
+}
+.sec1 img{
+    width: 146%;
+    height: 146%;
+    transform: scale(0.8);
+    margin: -23%;
+    position: absolute;
+    opacity: 65%;
+}
+footer{
+    background-color: #353535;
+    color: #5C5C5C;
+}
+/*---------------------Style da pagina de itens (shhhhhh, ninguem viu q ta aqui)----------------------------*/
+.dropbrabo .dropbrabo_itens{
+    position: relative;
+    font-size: .8rem;
+    padding-bottom: 4vh;
+}
+.dropbrabo{
+    margin: auto auto;
+    height: 50vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.dropbrabo li:hover .dropbrabo_itens{
+    display: block;
+}
+.morrah2{
+    margin-top: 2vh;
+}
+
+/*----------------------------------Media Quaries-----------------------------------------------*/
+
+@media screen and (min-width: 600px){
+
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 1024px){
+    .dropbrabo .dropbrabo_itens{
+        display: none;
+        padding-bottom: 0;
+    }
+    .sec1 div{
+        transition: ease-in-out 1.6s;
+        transform: rotateZ(45deg) scale(1);
+    }
+    .sec1 img{
+        transition: ease-in-out 1.6s ;
+        transform: rotateZ(-45deg) scale(1);
+        opacity: 100%;
+    }
+    .sec1 div:hover{
+        transform: rotateZ(0deg) scale(1.67);
+    
+    }
+    .sec1 img:hover{
+        transform: rotateZ(0deg) scale(0.8);
+        opacity: 65%;
+    }
+    .fundo1{
+        background-image: url("../img/medium/index/fundo_med.png");
+    }
+    .estrelas1{
+        background-image: url("../img/medium/index/estrelas1_med.png");
+    }
+    .estrelas2{
+        background-image: url("../img/medium/index/estrelas2_med.png");
+    }
+    .estrelas3{
+        background-image: url("../img/medium/index/estrelas3_med.png");
+    }
+    .montanha1{
+        background-image: url("../img/medium/index/montanha_med.png");
+    }
+    .montanha2{
+        background-image: url("../img/medium/index/montanhap2_med.png");
+    }
+}
+
+@media screen and (min-width: 1440px){
+
+}
+
+@media screen and (min-width: 1440px){
+
+}
+
+@media screen and (min-width: 2000px){
+    .fundo1{
+        background-image: url("../img/high/index/fundo_high.png");
+    }
+    .estrelas1{
+        background-image: url("../img/high/index/estrelas1_high.png");
+    }
+    .estrelas2{
+        background-image: url("../img/high/index/estrelas2_high.png");
+    }
+    .estrelas3{
+        background-image: url("../img/high/index/estrelas3_high.png");
+    }
+    .montanha1{
+        background-image: url("../img/high/index/montanha_high.png");
+    }
+    .montanha2{
+        background-image: url("../img/high/index/montanhap2_high.png");
+    }
+}
