@@ -45,26 +45,13 @@ html, body{
     right: 0;
 }
 /*----------------------------------Paralax no topo da pagina-----------------------------------------------*/
-.fundo{
-    background: url("../img/low/atenas/fundo.png") no-repeat center;
+.toquio{
+    background: url("../img/low/toquio/toquio.png") no-repeat center;
     background-size: cover;
     transform: translateZ(-800px) scale(4);
     z-index: 1;
 }
 
-.estrutura1{
-    background: url("../img/low/atenas/estrutura1.png") no-repeat center;
-    background-size: cover;
-    transform: translateZ(-750px) scale(3.6);
-    z-index: 2;
-}
-
-.estrutura2{
-    background: url("../img/low/atenas/estrutura2.png") no-repeat center;
-    background-size: cover;
-    transform: translateZ(-500px) scale(2.75);
-    z-index: 3;
-}
 
 
 /*----------------------------------Conteúdo da página-----------------------------------------------*/
@@ -121,26 +108,12 @@ p{
     }
     section div{
         width: 50vw;
-    }    
-    .fundo{
-        background: url("../img/medium/atenas/fundo.png") no-repeat center;
+    } 
+    .toquio{
+        background: url("../img/medium/toquio/toquio.png") no-repeat center;
         background-size: cover;
         transform: translateZ(-800px) scale(4);
         z-index: 1;
-    }
-    
-    .estrutura1{
-        background: url("../img//medium/atenas/estrutura1.png") no-repeat center;
-        background-size: cover;
-        transform: translateZ(-750px) scale(3.6);
-        z-index: 2;
-    }
-    
-    .estrutura2{
-        background: url("../img/medium/atenas/estrutura2.png") no-repeat center;
-        background-size: cover;
-        transform: translateZ(-500px) scale(2.75);
-        z-index: 3;
     }
 
 }

@@ -234,24 +234,3 @@ footer{
 @media screen and (min-width: 1440px){
 
 }
-
-@media screen and (min-width: 2000px){
-    .fundo1{
-        background-image: url("../img/high/index/fundo_high.png");
-    }
-    .estrelas1{
-        background-image: url("../img/high/index/estrelas1_high.png");
-    }
-    .estrelas2{
-        background-image: url("../img/high/index/estrelas2_high.png");
-    }
-    .estrelas3{
-        background-image: url("../img/high/index/estrelas3_high.png");
-    }
-    .montanha1{
-        background-image: url("../img/high/index/montanha_high.png");
-    }
-    .montanha2{
-        background-image: url("../img/high/index/montanhap2_high.png");
-    }
-}
