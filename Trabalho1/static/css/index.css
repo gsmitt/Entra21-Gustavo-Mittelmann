@@ -162,18 +162,29 @@ footer{
 }
 .dropbrabo{
     margin: auto auto;
-    height: 50vh;
+    padding-top: 5vh;
+    height: fit-content;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: space-between;
 }
 .dropbrabo li:hover .dropbrabo_itens{
-    display: block;
+    transform: scaleY(1);
+    opacity: 100%;
+
 }
 .morrah2{
-    margin-top: 2vh;
+    margin-top: 5vh;
 }
+.dropbrabo li{
+    padding: 1.5vh;
+}
+.dropbrabo .dropbrabo_itens{
+    display: block;
+    transition: linear .5s;
+}
+
 
 /*----------------------------------Media Quaries-----------------------------------------------*/
 
@@ -187,7 +198,8 @@ footer{
 
 @media screen and (min-width: 1024px){
     .dropbrabo .dropbrabo_itens{
-        display: none;
+        opacity: 0;
+        transform: scaleY(0);
         padding-bottom: 0;
     }
     .sec1 div{

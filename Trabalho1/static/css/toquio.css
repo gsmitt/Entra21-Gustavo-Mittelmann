@@ -64,6 +64,7 @@ nav{
 }
 .dd_content li:hover{
     background-color: #3C6E71;
+    color: #FFFFFF;
 }
 main{
     background-color: white;
@@ -81,6 +82,8 @@ section div{
     border-radius: .50em;
     overflow: hidden;
     margin: 5vh 0;
+    transition: ease-in-out 1s;
+    transform: scale(1);
 }
 
 img{
@@ -103,11 +106,14 @@ p{
 }
 
 @media screen and (min-width: 1024px){
+    section div:hover{
+        transform: scale(1.1);
+    }
     section{
         width: 40vw;
     }
     section div{
-        width: 50vw;
+        width: 40vw;
     } 
     .toquio{
         background: url("../img/medium/toquio/toquio.png") no-repeat center;
