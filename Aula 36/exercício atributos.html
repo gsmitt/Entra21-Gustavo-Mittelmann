@@ -17,6 +17,8 @@
     <script>
         let link = document.querySelectorAll('a');
         for(let i of link){
+            let href = i.getAttribute("href")
+            
             if(!(i.href.includes("://"))){
                 console.log(i)
             }

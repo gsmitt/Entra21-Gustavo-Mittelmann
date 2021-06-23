@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        /*
+        Exercício
+
+        Crie uma função que crie e mostre uma notificação na tela (<div class="notificacao">) quando for chamada.
+        Essa função deve receber um objeto com as seguintes propriedades:
+        {
+            top: 10px, // 10px será usado como valor default
+            right: 10px, // 10px será usado como valor default
+            html: "Olá", // "Olá" será usado como valor default            
+        }   
+        */
+        function mostraDiv(top = 10, right = 10, html = "Olá"){
+            let div = document.createElement("div")
+            div.className = "div"
+            div.innerHTML = html
+            div.style.right = right + "px"
+            div.style.top = top + "px"
+            document.body.append(div)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        1 - Crie uma função clear(elem) que remove todos os filhos de um elemento. 
+        Utilize o seguinte HTML para testar: 
+
+        <ol id="elem">
+            <li>Filho 1</li>
+            <li>Filho 2</li>
+        </ol>
+    -->
+    <!--
+        2 - Insira <li>Item 2</li><li>Item 3</li> na seguinte lista:
+        <ul>
+            <li>Item 1</li>            
+            <li>Item 4</li>
+        </ul>
+
+        Insira os elementos na ordem correta.
+    -->
+    <!--
+        3 - Escreva o script necessário para adicionar em cada <li> o número de descendentes (se houver).
+    -->
+    <ul>
+        <li>Animais
+            <ul>
+                <li>Mamíferos
+                    <ul>
+                        <li>Vacas</li>
+                        <li>Macacos</li>
+                        <li>Cachorros</li>
+                        <li>Tigres</li>
+                    </ul>
+                </li>
+                <li>Outros
+                    <ul>
+                        <li>Cobras</li>
+                        <li>Pássaros</li>
+                        <li>Lagartos</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        li = document.querySelectorAll("li")
+        for (let atual of li){
+            let descendentes = atual.querySelectorAll("li").length
+            if (descendentes){
+                atual.firstChild.data += `[${descendentes}]`
+            }
+        }
+        /*
+        let lista = document.querySelector("#elem")
+        function clear(elem){
+            elem.innerHTML = "" 
+        }
+        */
+
+    </script>
+</body>
+</html>
