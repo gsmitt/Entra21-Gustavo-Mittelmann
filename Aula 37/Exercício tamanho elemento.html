@@ -1,0 +1,31 @@
+<head>
+    <style>
+        .campo {
+            position: relative;
+            width: 600px;
+            height: 300px;
+            background-color: green;
+            border: 10px solid black;
+        }
+
+        .bola {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="campo">
+        <div class="bola"></div>
+    </div>
+</body>
+<script>
+    let bola = document.querySelector(".bola"),
+    campo = document.querySelector(".campo")
+    
+    bola.style.right = (campo.scrollWidth / 2 - bola.scrollWidth / 2)
+    bola.style.top = (campo.scrollHeight / 2 - bola.scrollHeight / 2)
+</script>
