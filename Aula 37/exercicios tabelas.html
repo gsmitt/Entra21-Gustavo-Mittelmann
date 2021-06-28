@@ -1,0 +1,90 @@
+<!--
+<head>
+    <style>
+        table {
+        border-collapse: collapse;
+        }
+
+        td {
+        border: 1px solid black;
+        padding: 3px 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+        <td>1:1</td>
+        <td>2:1</td>
+        <td>3:1</td>
+        <td>4:1</td>
+        <td>5:1</td>
+        </tr>
+        <tr>
+        <td>1:2</td>
+        <td>2:2</td>
+        <td>3:2</td>
+        <td>4:2</td>
+        <td>5:2</td>
+        </tr>
+        <tr>
+        <td>1:3</td>
+        <td>2:3</td>
+        <td>3:3</td>
+        <td>4:3</td>
+        <td>5:3</td>
+        </tr>
+        <tr>
+        <td>1:4</td>
+        <td>2:4</td>
+        <td>3:4</td>
+        <td>4:4</td>
+        <td>5:4</td>
+        </tr>
+        <tr>
+        <td>1:5</td>
+        <td>2:5</td>
+        <td>3:5</td>
+        <td>4:5</td>
+        <td>5:5</td>
+        </tr>
+    </table>
+    <script>
+        let tabela = document.querySelector("table")
+        for (let tb of tabela.children){
+            let coluna = 0, linha = 0
+            for (let tr of tb.children){
+                linha = 0
+                coluna ++
+                for (let td of tr.children){
+                    linha ++
+                    if (coluna == linha){
+                        td.style.backgroundColor = "red"
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+-->
+<table id="grid">
+    <thead>
+        <tr>
+            <th data-type="number">Age</th>
+            <th data-type="string">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>5</td>
+            <td>John</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Ann</td>
+        </tr>
+    </tbody>
+</table>
+<script>
+
+</script>

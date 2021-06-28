@@ -1,0 +1,59 @@
+<!--
+<body>
+    <input type="button" id="esconder" value="Click para esconder/mostrar o texto" />            
+    <div id="text">Texto</div>
+    <script>
+        let botao = document.querySelector("#esconder"),
+        texto = document.querySelector("#text")
+        botao.addEventListener("click",() => {
+            texto.hidden = !texto.hidden
+        })
+
+    </script>
+</body>
+-->
+<head>
+    <style>
+        .campo {
+            position: relative;
+            width: 600px;
+            height: 300px;
+            background-color: green;
+            border: 10px solid black;
+        }
+
+        .bola {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="campo">
+        <div class="bola"></div>
+    </div>
+    <script>
+        let campo = document.querySelector(".campo"),
+            bola = document.querySelector(".bola")
+
+            campo.addEventListener("click", (event) => {
+                let coordsCampo = event.currentTarget.getBoundingClientRect();
+
+                let coordsBola = {
+                top: event.clientY - coordsCampo.top - campo.clientTop - bola.clientHeight / 2,
+                left: event.clientX - coordsCampo.left - campo.clientLeft - bola.clientWidth / 2
+                };
+                if (coordsBola.top < 0) {coordsBola.top = 0}
+                if (coordsBola.left < 0) {coordsBola.left = 0}
+                if (coordsBola.top + bola.clientHeight > campo.clientHeight)
+                {coordsBola.top = campo.clientHeight - bola.clientHeight}
+                if (coordsBola.left + bola.clientWidth > campo.clientWidth)
+                {coordsBola.left = campo.clientWidth - bola.clientWidth}
+            bola.style.left = coordsBola.left + 'px';
+            bola.style.top = coordsBola.top + 'px';
+            })
+    </script>
+</body>
