@@ -1,3 +1,4 @@
+<!--
 <ul>
     <li>Primeiro Item</li>
     <li>Segundo Item</li>
@@ -11,5 +12,98 @@
     }
 </style>
 <script>
-    
+    let ul = document.querySelector("ul")
+    ul.addEventListener("click", (event) => {
+        if(event.target.tagName != "LI") return;
+        
+        if(event.ctrlKey){
+            selecVarios(event.target)
+        }
+        else{
+            selecUm(event.target)
+        }
+    })
+
+    function selecVarios(li){
+        li.classList.toggle("selecionada")
+    }
+
+    function selecUm (li){
+        let selec = ul.querySelectorAll(".selecionada")
+        for(let i of selec){
+            i.classList.remove("selecionada")
+        }
+        li.classList.add("selecionada")
+    }
 </script>
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button id="submit">Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        let input = document.querySelector("input"),
+        button = document.querySelectorAll("button"),
+        ul = document.querySelector("ul")
+        
+        for(i of button){
+            i.addEventListener("click", (event) => {
+                if(event.target.tagName != "BUTTON") return;
+                if(event.target.id == "submit"){
+                    enviar(input.value)
+                }
+            })
+        }
+        function enviar(item){
+            li = document.createElement("li");
+            but = document.createElement("button")
+            but.textContent = "Deletar"
+            but.addEventListener("click",(event) => {
+                deletar(event.target)
+            })
+            li.textContent = item;
+            li.append(but)
+            ul.appendChild(li)
+            limpar()
+        }
+
+        function deletar(butt){
+            butt.parentNode.remove();
+            limpar()
+        }
+        function limpar(){
+            input.value = ""
+            input.focus()
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function roda(func, ...codes){
+            let pressionadas = new Set()
+
+            document.addEventListener("keydown", (event) => {
+                pressionadas.add(event.code)
+                console.log(pressionadas)
+
+                for(let i of codes){
+                    if (!pressionadas.has(i)){
+                        return
+                    }
+                }
+                pressionadas.clear()
+                func()
+            })
+
+            document.addEventListener("keyup", (event) => {
+                pressionadas.delete(event.code)
+            })
+        }
+        roda(
+            () => alert("Hello!"),
+            "KeyQ",
+            "KeyW"
+        )
+        
+    </script>
+</body>
+</html>
