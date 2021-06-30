@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            overflow-y: hidden;
+        }
+        p{
+            font-family: Comic Sans MS;
+            font-size: 500%;
+            position: absolute;
+            text-align: center;
+            top: 38%;
+            left: 39%;
+        }
+    </style>
+</head>
+<body>
+    <p>hh:mm:ss:ms</p>
+    <script>
+        // 1)
+
+        function imprimeNumeros(comeco, fim){
+            atual = comeco
+            intervalo = setInterval(() => {
+                console.log(atual)
+                if(atual >= fim){
+                   clearInterval(intervalo) 
+                }
+                atual++
+            }, 1000)
+        }
+        function imprimeNumeros2(comeco,fim){
+            atual = comeco
+            intervalo = setTimeout(() => {
+                console.log(atual)
+                atual++
+                if(atual <= fim){
+                   imprimeNumeros2(atual,fim) 
+                }
+            }, 1000)
+        }
+
+        // 2)
+        function relogio(){
+            p = document.querySelector("p")
+            intervalo = setInterval(() => {
+                data = new Date()
+                let hora = String(data.getHours()).padStart(2,"0"),
+                min = String(data.getMinutes()).padStart(2,"0"),
+                sec = String(data.getSeconds()).padStart(2,"0");
+                ms = String(data.getMilliseconds()*10).substr(0,2)
+                p.innerText = `${hora}:${min}:${sec}:${ms}`
+            }, 10)
+        }
+        relogio()
+        
+        // 3)
+        function criaCronometro(tempo, callback){
+            intervalo = setInterval(() => {
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            },100)
+        }
+        function callback(){
+            alert("oi")
+        }
+
+    </script>
+</body>
+</html>

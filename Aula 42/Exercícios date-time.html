@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1)
+
+        //let data = new Date(2012,1,20,3,12,0)
+
+        // 2)
+        function obtemDiaSemana(date){
+            switch(date.getDay()){
+                case 0:
+                    dia = "Domingo"
+                    break               
+                case 1:
+                    dia = "Segunda-Feira"
+                    break
+                case 2:
+                    dia = "Terça-Feira"
+                    break
+                case 3:
+                    dia = "Quarta-Feira"
+                    break
+                case 4:
+                    dia = "Quinta-Feira"
+                    break
+                case 5:
+                    dia = "Sexta-Feira"
+                    break
+                case 6:
+                    dia = "Sábado"
+                    break
+            }
+            return dia
+        }
+
+        // 3)
+
+        function obtemUltimoDiaMes(mes,ano){
+            if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)){
+                bis = true
+                }
+            else{
+                bis = false
+            }
+            switch(mes) {
+                case 1:
+                    if (bis){
+                        dia = 29
+                    }
+                    else{
+                        dia = 2
+                    }
+                    break
+                case 3:
+                case 5:
+                case 8:
+                case 10:
+                    dia = 30
+                    break
+                default:
+                    dia = 31
+            }
+            return dia
+        }
+        
+        // 4)
+        function obtemSegundos(){
+            let dia = new Date()
+            tempo = (dia.getHours() * 60 + dia.getMinutes()) * 60 + dia.getSeconds()
+            return tempo
+        }
+
+        // 5)
+        function segundosParaAmanha(){
+            let dia = new Date()
+            tempo = (dia.getHours() * 60 + dia.getMinutes()) * 60 + dia.getSeconds()
+            falta = 24 * 60 * 60 - tempo
+            return falta
+        }
+
+        // 6) 
+        function formataData(data){
+            let agora = Date.now()
+            if (agora - data.getTime() < 1000){
+                formata = "agora"
+            }
+            else if(agora - data.getTime() < 60 * 1000){
+                formata = `${(agora - data.getTime()) / 1000} segundos atras`
+            }
+            else if(agora - data.getTime() < 60 * 60 * 1000){
+                formata = `${(agora - data.getTime()) / (60 * 1000)} minutos atras`
+            }
+            else{
+                let mes = String(data.getMonth()).padStart(2,"0"),
+                dia = String(data.getDate()).padStart(2,"0"),
+                ano = String(data.getFullYear()).substr(-2),
+                hora = String(data.getHours()).padStart(2,"0"),
+                min = String(data.getMinutes()).padStart(2,"0")
+                formata = `${dia}.${mes}.${ano} ${hora}:${min}`
+            }
+            return formata
+        }
+
+    </script>
+</body>
+</html>
