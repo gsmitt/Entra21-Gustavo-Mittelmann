@@ -33,49 +33,11 @@
         <input type="time" step="1">
         <button>Iniciar</button>
     </div>
-    
     <script>
-        // 1)
 
-        function imprimeNumeros(comeco, fim){
-            atual = comeco
-            intervalo = setInterval(() => {
-                console.log(atual)
-                if(atual >= fim){
-                   clearInterval(intervalo) 
-                }
-                atual++
-            }, 1000)
-        }
-        function imprimeNumeros2(comeco,fim){
-            atual = comeco
-            intervalo = setTimeout(() => {
-                console.log(atual)
-                atual++
-                if(atual <= fim){
-                   imprimeNumeros2(atual,fim) 
-                }
-            }, 1000)
-        }
-
-        // 2)
-        function relogio(){
-            p = document.querySelector("p")
-            intervalo = setInterval(() => {
-                data = new Date()
-                let hora = String(data.getHours()).padStart(2,"0"),
-                min = String(data.getMinutes()).padStart(2,"0"),
-                sec = String(data.getSeconds()).padStart(2,"0");
-                ms = String(data.getMilliseconds()*10).substr(0,2)
-                p.innerText = `${hora}:${min}:${sec}:${ms}`
-            }, 10)
-        }
-        //relogio()
-        
-        // 3)
         let input = document.querySelector("input"),
         button = document.querySelector("button"),
-        intervalo
+        intervalo, tmp = 0
         input.value = "00:00:00"
         
         button.addEventListener("click",() => {
@@ -83,22 +45,42 @@
                 clearInterval(intervalo)
             }
             criaCronometro (input.value, callback)
-            })
+        })
+
+        if(localStorage.getItem("tmp")){
+            modifica()
+        }
+        window.addEventListener("beforeunload",() => {
+            console.log("aaa")
+            armazena()
+        })
+
+        function armazena(){
+            localStorage.setItem("tmp",tmp)
+        }
+        function modifica(){
+            tmp = localStorage.getItem("tmp")
+            tempo = +tmp - + Date.now()
+            console.log(tempo)
+            criaCronometro(tempo,callback)
+        }
 
         function criaCronometro(tempo, callback){
             let inicio = Date.now()
-            tempo = ((+tempo.substr(0,2) * 60 + +tempo.substr(3,2)) * 60 + +tempo.substr(6,2)) * 1000
-            tempo += inicio
-            
+            if (typeof tempo == "string"){
+                tempo = ((+tempo.substr(0,2) * 60 + +tempo.substr(3,2)) * 60 + +tempo.substr(6,2)) * 1000
+            tmp = tempo + inicio
+            }
             intervalo = setInterval(() => {
                 let agora = Date.now(),
-                falta = tempo - agora,
+                falta = tmp - agora,
                 cronometro = new Date(0,0,0,0,0,0,falta)
 
                 if (falta < 0){
                     clearInterval(intervalo)
                     defineRelogio(new Date(0,0,0,0,0,0,0))
                     setTimeout(() => {callback()}, 10)
+                    localStorage.removeItem("tmp")
                 }
                 else{
                 defineRelogio(cronometro)
@@ -116,6 +98,7 @@
         function callback(){
             alert("oi")
         }
+
 
     </script>
 </body>
