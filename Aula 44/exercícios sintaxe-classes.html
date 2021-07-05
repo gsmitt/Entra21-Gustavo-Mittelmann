@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1)
+        class Aluno {
+            constructor (maticula, nome, provas, trabalho){
+                this.maticula = maticula
+                this.nome = nome
+                this.provas = provas
+                this.trabalho = trabalho
+            }
+            calculaMedia(){
+                let media = (+this.trabalho * 2 + (+this.provas[0] + +this.provas[1]) * 3) / 8
+                return media
+            }
+            calculaFinal(){
+                let final
+                if (this.calculaMedia() >= 6){
+                    final = 0
+                }
+                else {
+                    final = 6 - this.calculaMedia()
+                }
+                return final
+            
+            }
+        }
+
+        //2)
+        class Agenda{
+            constructor (pessoas = []){
+                this.pessoas = pessoas
+            }
+            armazenaPessoa(nome, telefone){
+                if(this.pessoas.length < 10){
+                    this.pessoas.push(new Pessoa(nome, telefone))
+                }
+                else{
+                    console.log("A lista está cheia")
+                }
+            }
+            removePessoa(nome){
+                let brabo = "?"
+                for (let i in this.pessoas){
+                    if(this.pessoas[i].nome == nome){
+                        this.pessoas.splice(i, 1)
+                        brabo = "!"
+                        break
+                    }
+                }
+                if (brabo != "!"){
+                    console.log("Não há nimguém com esse nome")
+                }
+            }
+            buscaPessoa(nome){
+                let brabo = "?"
+                for (let i in this.pessoas){
+                    if(this.pessoas[i].nome == nome){
+                        console.log(this.pessoas[i].telefone)
+                        brabo = "!"
+                        break
+                    }
+                }
+                if (brabo != "!"){
+                    console.log("Não há nimguém com esse nome")
+                }
+            }
+            imprimeAgenda(){
+                for (let i in this.pessoas){
+                    console.log(this.pessoas[i].nome, this.pessoas[i].telefone)
+                }
+            }
+            imprimePessoa(indice){
+                console.log(this.pessoas[indice].nome, this.pessoas[indice].telefone)
+            }
+        } 
+        class Pessoa{
+            constructor (nome, telefone){
+                this.nome = nome
+                this.telefone = telefone
+            }
+        }
+
+        //3)
+        class Voo{
+            aviao = []
+            constructor(numero, data){
+                this.numero = numero
+                this.data = data
+            }
+            proximoLivre(){
+                for(let i = 0; i < 100; i++){
+                    if (this.aviao[i] == undefined){
+                        return i+1
+                    }
+                }
+                return "cheio"
+            }
+            verifica(num){
+                if (this.aviao[num-1]){
+                    return "ocupado"
+                }
+                return "desocupado"
+
+            }
+            ocupa(num){
+                if (this.aviao[num-1]){
+                    return false
+                }
+                this.aviao[num-1] = "Passageiro"
+                return true
+            }
+            vagas(){
+                let vg = 0
+                for(let i = 0; i < 100; i++){
+                    if(this.aviao[i] == undefined){
+                        vg++
+                    }
+                }
+                return vg
+            }
+            getVoo(){
+                return this.numero
+            }
+        }
+
+    </script>
+</body>
+</html>
