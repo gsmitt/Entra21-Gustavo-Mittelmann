@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1)
+        class Produto{
+            constructor(nomeLoja, preco){
+                this.nomeLoja = nomeLoja
+                this.preco = preco
+            }
+            #descricao = "Produto de informática"
+            getDescricao(){
+                return this.#descricao
+            }
+        }
+        class Mouse extends Produto{
+            constructor(nomeLoja, preco, descricao, tipo){
+                super(descricao)
+                this.tipo = tipo
+            }
+            get descricao(){
+                return this.descricao +" "+ this.tipo
+            }
+        }
+        class Livro extends Produto{
+            constructor(nomeLoja, preco, descricao, autor){
+                super(nomeLoja,preco, descricao)
+                this.autor = autor
+            }
+            get descricao(){
+                return this.descricao +" "+ this.autor
+            }
+        }
+        //??????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+    </script>
+</body>
+</html>

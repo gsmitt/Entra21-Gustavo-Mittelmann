@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                /* 
+        Exercícios
+        
+        1) Analise o código abaixo e informe quais valores serão apresentados no processo
+
+        let animal = {
+            pula: null
+        }
+
+        let coelho = {
+            __proto__: animal,
+            pula: true
+        }
+
+        console.log(coelho.pula) // true
+
+        delete coelho.pula
+
+        console.log(coelho.pula) // null
+
+        delete animal.pula
+
+        console.log(coelho.pula) // undefined
+                */
+
+        //2)
+        /*
+        let cabeca = {
+            oculos: 1
+        }
+
+        let mesa = {
+            caneta: 3
+        }
+
+        let cama = {
+            lenco: 1,
+            travesseiro: 2
+        }
+
+        let bolso = {
+            dinheiro: 200
+        }
+        mesa.__proto__ = cabeca
+        cama.__proto__ = mesa
+        bolso.__proto__ = cama
+
+        //console.log(bolso.caneta) // 3
+        //console.log(cama.oculos) // 1
+        //console.log(mesa.dinheiro) // undefined
+        */
+        //3)
+        let hamster = {
+            estomago: [],
+            
+            comer(comida) {
+                this.estomago.push(comida)
+            }
+        }
+
+        let hamtaro = {
+            __proto__: hamster,
+            estomago: []
+        }
+
+        let fofuxo = {
+            __proto__: hamster,
+            estomago: []
+        }
+
+        hamtaro.comer("Maçã")
+        console.log(hamtaro.estomago) // Maçã
+
+        console.log(fofuxo.estomago) // Maçã
+
+    </script>
+</body>
+</html>
