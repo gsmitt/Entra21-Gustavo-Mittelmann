@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <select name="breed" id="breed"></select>
+    </div>
+    <div class="imagens">
+
+    </div>
+    <script>
+        let select = document.querySelector("#breed")
+        select.addEventListener("change",() => {
+            submit()
+        })
+
+        function submit(){
+            let select = document.querySelector("#breed"),
+            container = document.querySelector(".imagens")
+            localStorage.setItem("raca", JSON.stringify(select.value))
+            container.innerHTML = ""
+            getCat()
+        }
+
+        async function getCat() {
+            let breeds = await fetch("https://api.thecatapi.com/v1/breeds", {
+                headers: {
+                        "x-api-key": "ea2c9cfc-5fe7-46fa-adf1-9c741d90259a"
+                    }
+            })
+            if (!breeds.ok) {
+                    return console.log("A requisição falhou!")
+                }
+            let b = await breeds.json(),
+            select = document.querySelector("#breed")
+            select.style.width = "200px"
+            for(let i of b){
+                let n = document.createElement("option")
+                n.value = i.id
+                n.innerHTML = i.name
+                select.appendChild(n)
+            }
+            
+            for (let i = 1; i <= 10; i++){
+                let urlfoda = "https://api.thecatapi.com/v1/images/search?breed_ids=" + JSON.parse(localStorage.getItem("raca"))
+                let response = await fetch(urlfoda, {
+                    headers: {
+                        "x-api-key": "ea2c9cfc-5fe7-46fa-adf1-9c741d90259a"
+                    }
+                });
+                    
+                if (!response.ok) {
+                    return console.log("A requisição falhou!")
+                }
+
+                let body = await response.json();
+
+                createCatImage(body[0].url);
+
+            function createCatImage(url) {
+                const img = document.createElement("img")
+                let container = document.querySelector(".imagens")
+                img.src = url;
+                img.style.maxWidth = "500px"
+                container.appendChild(img);
+            }
+            }
+        }
+
+        getCat();
+    </script>
+</body>
+</html>
