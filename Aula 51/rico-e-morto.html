@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        Rico e Morto
+    </header>
     <div class="container">
 
     </div>
@@ -36,9 +39,11 @@
 
         function imprime(personagem) {
             let img = document.createElement("img"),
+            div = document.createElement("div")
             cont = document.querySelector(".container")
             img.src = personagem.image
-            cont.appendChild(img)
+            div.appendChild(img)
+            cont.appendChild(div)
         }
 
         for(let i = 1; i < 10; i++){
