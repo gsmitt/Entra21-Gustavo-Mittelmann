@@ -1,0 +1,72 @@
+DROP TABLE IF EXISTS contrato;
+DROP TABLE IF EXISTS imovel;
+DROP TABLE IF EXISTS proprietario;
+DROP TABLE IF EXISTS locatario;
+
+CREATE TABLE IF NOT EXISTS proprietario (
+	id SERIAL PRIMARY KEY,
+	nome text NOT NULL,
+	telefone text NOT NULL,
+	cpf text NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS locatario (
+	id SERIAL PRIMARY KEY,
+	nome text NOT NULL,
+	telefone text NOT NULL,
+	cpf text NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS imovel (
+	id SERIAL PRIMARY KEY,
+	numero_quartos int NOT NULL,
+	numero_banheiros int NOT NULL,
+	area numeric NOT NULL,
+	piscina bool NOT NULL,
+	churras bool NOT NULL,
+	id_prop int NOT NULL,
+	FOREIGN KEY (id_prop) REFERENCES proprietario
+);
+
+CREATE TABLE IF NOT EXISTS contrato (
+	id SERIAL PRIMARY KEY,
+	data_inicio date NOT NULL,
+	data_fim date NOT NULL,
+	valor_aluguel numeric NOT NULL,
+	dia_vencimento date NOT NULL,
+	id_prop int NOT NULL,
+	id_imv int NOT NULL,
+	id_locat int NOT NULL,
+	FOREIGN KEY (id_prop) REFERENCES proprietario,
+	FOREIGN KEY (id_imv) REFERENCES imovel,
+	FOREIGN KEY (id_locat) REFERENCES locatario
+);
+
+
+INSERT INTO proprietario (nome, telefone, cpf) VALUES
+	('Stronghold', '0000-0000', '000.000.000-00'),
+	('Ped''panu','1234-1234','000.400.289-22'),
+	('Kob','2424-2424','123.123.123-12'),
+	('Strudel','3333-3333','333.333.333-33'),
+	('Strahd Von Zarovich','6666-6666','666.666.666-66');
+
+INSERT INTO locatario (nome, telefone, cpf) VALUES
+	('Ezmeralda', '1000-1000', '100.100.100-10'),
+	('Naal','2234-2234','222.400.289-33'),
+	('Astrus','2324-2324','123.123.333-32'),
+	('Anne','3323-3323','332.332.332-32'),
+	('Lizanderoff','6644-6644','664.664.664-64');
+	
+INSERT INTO imovel (numero_quartos, numero_banheiros, area, piscina, churras, id_prop) VALUES
+	(2, 2, 25.5, true, true, 1),
+	(1, 1, 15.5, false, false, 2),
+	(3, 2, 50, false, true, 3),
+	(4, 2, 75.5, true, true, 4),
+	(40, 18, 1000, true, true, 5);
+	
+INSERT INTO contrato (data_inicio, data_fim, valor_aluguel, dia_vencimento, id_prop, id_imv, id_locat) VALUES
+	('2020-12-31','2020-12-31', 123, '2020-12-31', 1, 1, 1),
+	('2020-12-31','2020-12-31', 123, '2020-12-31', 2, 2, 2),
+	('2020-12-31','2020-12-31', 123, '2020-12-31', 3, 3, 3),
+	('2020-12-31','2020-12-31', 123, '2020-12-31', 4, 4, 4),
+	('2020-12-31','2020-12-31', 123, '2020-12-31', 5, 5, 5);

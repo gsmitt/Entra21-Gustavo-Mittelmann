@@ -1,0 +1,19 @@
+--DROP SCHEMA public CASCADE;
+--CREATE SCHEMA public;
+--GRANT ALL ON SCHEMA public TO postgres;
+
+CREATE TABLE IF NOT EXISTS cliente (
+	id SERIAL PRIMARY KEY,
+	endereco text NOT NULL,
+	cpf_cnpj text NOT NULL,
+	pontos int NOT NULL,
+	tipo_pes bool NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS editora (
+	id SERIAL PRIMARY KEY,
+	codigo text NOT NULL UNIQUE,
+	endereco text NOT NULL,
+	telefone text NOT NULL,
+	gerente text NOT NULL
+);
