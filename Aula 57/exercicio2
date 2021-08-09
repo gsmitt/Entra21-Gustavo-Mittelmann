@@ -1,13 +1,14 @@
 --DROP SCHEMA public CASCADE;
 --CREATE SCHEMA public;
 --GRANT ALL ON SCHEMA public TO postgres;
+CREATE TYPE tipo_pess AS ENUM ('PF', 'PJ')
 
 CREATE TABLE IF NOT EXISTS cliente (
 	id SERIAL PRIMARY KEY,
 	endereco text NOT NULL,
 	cpf_cnpj text NOT NULL,
 	pontos int NOT NULL,
-	tipo_pes bool NOT NULL
+	tipo_pes tipo_pess NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS editora (

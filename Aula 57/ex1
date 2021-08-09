@@ -1,20 +1,49 @@
-	CREATE TABLE IF NOT EXISTS  pedido(
+	-- CREATE TABLE IF NOT EXISTS  pedido(
+	-- 	id SERIAL PRIMARY KEY,
+	-- 	total_pedido numeric NOT NULL
+	-- );
+	
+	CREATE TABLE IF NOT EXISTS marca (
 		id SERIAL PRIMARY KEY,
-		total_pedido numeric NOT NULL
+		nome text NOT NULL UNIQUE
 	);
 	
 	CREATE TABLE IF NOT EXISTS  produto(
 		id SERIAL PRIMARY KEY,
 		nome text NOT NULL UNIQUE,
-		preco numeric NOT NULL CHECK (preco > 0)
+		-- preco numeric NOT NULL CHECK (preco > 0),
+		id_marca int NOT NULL REFERENCES marca
 	);
 	
-	CREATE TABLE IF NOT EXISTS pedido_produto(
-		id_pedido integer,
-		id_produto integer,
-		quantidade integer NOT NULL,
-		PRIMARY KEY (id_pedido, id_produto),
-		FOREIGN KEY (id_pedido) REFERENCES pedido,
-		FOREIGN KEY (id_produto) REFERENCES produto
-	);
+	-- CREATE TABLE IF NOT EXISTS pedido_produto(
+	-- 	id_pedido integer,
+	-- 	id_produto integer,
+	-- 	quantidade integer NOT NULL,
+	-- 	PRIMARY KEY (id_pedido, id_produto),
+	-- 	FOREIGN KEY (id_pedido) REFERENCES pedido,
+	-- 	FOREIGN KEY (id_produto) REFERENCES produto
+	-- );
+	
+	
+	
+	-- INSERT INTO produto (nome,preco) VALUES
+	-- ('lápis',1),
+	-- ('caneta', 2.5),
+	-- ('borracha',.5),
+	-- ('régua',3),
+	-- ('caderno', 40);
+	
+	-- INSERT INTO marca (nome) VALUES
+	-- ('Apple'),('Xiaomi'),('Samsung');
+	
+	-- INSERT INTO produto (nome,id_marca) VALUES
+	-- ('Galaxy A32', 3),
+	-- ('Galaxy A12', 3),
+	-- ('Iphone 11', 1);
+	
+	SELECT * FROM produto WHERE id_marca = 3;
+	-- SELECT * FROM marca;
+	-- SELECT m.nome marca_nome, p.nome produto_nome
+	-- FROM marca m
+	-- INNER JOIN produto p ON p.id_marca = m.id;
 	
