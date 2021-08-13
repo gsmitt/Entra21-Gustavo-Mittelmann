@@ -1,0 +1,81 @@
+-- DROP TABLE departamento CASCADE;
+-- DROP TABLE funcionarios CASCADE;
+
+CREATE TABLE IF NOT EXISTS departamento (
+	id SERIAL PRIMARY KEY,
+	nome text NOT NULL UNIQUE,
+	localizacao text NOT NULL,
+	id_gerente int
+);
+CREATE TABLE IF NOT EXISTS funcionarios (
+	id SERIAL PRIMARY KEY,
+	nome text NOT NULL,
+	sobrenome text NOT NULL,
+	data_nacimento date NOT NULL,
+	cpf text NOT NULL UNIQUE,
+	rg text NOT NULL UNIQUE,
+	logradouro text NOT NULL,
+	cep text NOT NULL,
+	cidade text NOT NULL,
+	telefone text NOT NULL,
+	funcao text NOT NULL,
+	salario numeric NOT NULL,
+	id_departamento int NOT NULL REFERENCES departamento
+);
+
+-- ALTER TABLE departamento ADD CONSTRAINT id_gerente
+-- FOREIGN KEY (id_gerente) REFERENCES funcionarios;
+
+-- INSERT INTO departamento (nome, localizacao, id_gerente) VALUES
+-- ('Dept 1', 'aqui', NULL),
+-- ('Dept 2', 'ali', NULL),
+-- ('Dept 3', 'n sei', NULL),
+-- ('Dept 4', 'sla', NULL),
+-- ('Dept 5', 'aqui', NULL);
+
+-- INSERT INTO funcionarios (nome,sobrenome,data_nacimento,cpf,rg,logradouro,cep,cidade,telefone,funcao,salario,id_departamento) VALUES
+-- ('Carlos','Krenkel','2000/03/12','000.000.000-00','5555555','sei la','009000','indaial','0000-0000','Gerente', 6969, 1),
+-- ('Carros','Clica','1992/02/11','001.000.000-00','1555555','algum lugar','002000','indaial','0002-2000','Gerente', 6924, 2),
+-- ('ASDASD','ABCABC','2022/03/12','000.000.200-00','2555555','aaaaaa','009200','timbo','0002-0000','Gerente', 2469, 3),
+-- ('BBBBBB','CCCCCC','2020/03/12','222.000.000-00','5552255','sei la','002200','timbo','0230-0000','Vendedor', 2269, 5),
+-- ('Estrada','Zaroio','1400/02/04','003.200.020-20','5323255','bbbbb','009300','barovia','0000-0023','Vendedor', 6969, 2);
+
+-- UPDATE departamento SET id_gerente = 3 WHERE id = 5
+
+-- a)
+-- SELECT nome ||" "|| sobrenome nome_completo, salario FROM funcionarios WHERE salario > 1000 ORDER BY nome_completo;
+
+-- b)
+-- SELECT nome, sobrenome, data_nacimento FROM funcionarios ORDER BY data_nacimento DESC;
+
+-- c)
+-- SELECT SUM(salario) total FROM funcionarios;
+
+-- d) 
+-- SELECT f.nome, d.nome, f.funcao 
+-- FROM funcionarios f
+-- INNER JOIN departamento d ON d.id = f.id_departamento;
+
+-- e)
+-- SELECT d.nome, f.nome FROM departamento d
+-- INNER JOIN funcionarios f on d.id_gerente = f.id;
+
+-- f)
+-- SELECT id_departamento, SUM(salario) FROM funcionarios
+-- GROUP BY id_departamento;
+
+-- g)
+-- SELECT COUNT(id) total FROM funcionarios;
+
+-- h) 
+-- SELECT ROUND(AVG(salario),2) salario_medio FROM funcionarios;
+
+-- i)
+-- SELECT d.nome, ROUND(AVG(f.salario),2) FROM funcionarios f
+-- INNER JOIN departamento d ON d.id = f.id_departamento
+-- GROUP BY d.nome;
+
+-- g)
+SELECT d.nome, max(f.salario) FROM funcionarios f
+INNER JOIN departamento d ON d.id = f.id_departamento
+GROUP BY d.nome;
