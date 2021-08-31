@@ -72,3 +72,4 @@ const cliente3 = {
 }
 const clientes = [cliente1,cliente2,cliente3]
 insereclientes(clientes)
+*/
